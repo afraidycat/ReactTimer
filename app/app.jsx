@@ -3,6 +3,8 @@ var ReactDOM = require('react-dom');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
 var Nav = require('Nav');
+var Timer = require('Timer');
+var Countdown = require('Countdown');
 
 // Load foundation
 require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
@@ -14,8 +16,8 @@ require('style-loader!css-loader!sass-loader!applicationStyles');
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={Main}>
-          <Route path="timer" />
-          <Route path="countdown" />
+          <IndexRoute component={Timer} />
+          <Route path="countdown" component={Countdown} />
         </Route>
     </Router>,
     document.getElementById('app')
